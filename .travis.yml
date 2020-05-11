@@ -9,6 +9,17 @@ env:
 matrix:
   include:
 
+    - python: 3.6
+      addons:
+        postgresql: '9.5'
+        apt:
+          packages:
+            - postgresql-client-9.5
+      env:
+        - TOXENV=pytemp
+        - PGPORT=5432
+        - PGVER=9.5
+
     - env: TOXENV=black
       python: 3.6
 
